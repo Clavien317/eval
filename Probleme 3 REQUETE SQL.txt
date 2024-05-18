@@ -1,0 +1,1 @@
+SELECT niveau FROM `resultat_examen` WHERE note>=10 AND code_matiere="ALG" LIMIT 30;
