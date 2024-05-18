@@ -1,26 +1,28 @@
-
-
 def Expert(experience):
-    print(experience)
-    plus = max(experience)
-    # experience.pop(plus)
-    deuxiem = max(experience)
-    print("Le plus expert est : [",experience.index(plus),",",experience.index(deuxiem),"]")
-    moins = min(experience)
-    print("Le moins expert est : [",experience.index(moins),",",experience.index(moins),"]")
+    print("Années d'expérience fournies :", experience)
+    
+    # Trouver le premier maximum
+    premier_max = max(experience)
+    # Trouver le deuxième maximum après avoir temporairement enlevé le premier maximum
+    experience_sans_premier_max = experience.copy()
+    experience_sans_premier_max.remove(premier_max)
+    deuxieme_max = max(experience_sans_premier_max)
+    
+    print("Les deux plus experts sont : [", experience.index(premier_max), ",", experience.index(deuxieme_max), "]")
+    
+    moins_expert = min(experience)
+    print("Le moins expert est : [", experience.index(moins_expert), ",", experience.index(moins_expert), "]")
 
 def PairDev(nbre):
-    experience=[]
-    if(nbre%2 ==0):
-        while (nbre>0):
-            nbre=nbre-1
-            annee = int(input("Entrer annee d'exp : "))
+    experience = []
+    if nbre % 2 == 0:
+        for _ in range(nbre):
+            annee = int(input("Entrer année d'expérience : "))
             experience.append(annee)
-        print(experience)
+        print("Années d'expérience fournies :", experience)
         Expert(experience)
     else:
-        print("Non pair")
+        print("Le nombre d'années d'expérience doit être pair.")
 
-
-nbre = int(input("Combien annee entrez-vous? \n"))
+nbre = int(input("Combien d'années d'expérience entrez-vous? \n"))
 PairDev(nbre)
