@@ -3,7 +3,9 @@ def Expert(experience):
     
     # Trouver le premier maximum
     premier_max = max(experience)
-    # Trouver le deuxième maximum après avoir temporairement enlevé le premier maximum
+
+    
+    # Trouver le deuxième maximum
     experience_sans_premier_max = experience.copy()
     experience_sans_premier_max.remove(premier_max)
     deuxieme_max = max(experience_sans_premier_max)

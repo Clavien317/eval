@@ -6,12 +6,10 @@ def isValid(html):
             j = i + 1
             is_closing = False
             
-            # Check if it's a closing tag
             if j < len(html) and html[j] == '/':
                 is_closing = True
                 j += 1
             
-            # Find the end of the tag
             while j < len(html) and html[j] != '>':
                 j += 1
             
@@ -21,7 +19,6 @@ def isValid(html):
             
             tag = html[i+1:j] if not is_closing else html[i+2:j]
             
-            # Push opening tags onto the stack, check closing tags
             if not is_closing:
                 tags.append(tag)
             else:
